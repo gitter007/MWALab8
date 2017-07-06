@@ -6,6 +6,55 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!--<p>Welcome to <%= title %></p>-->
+
+<div id="map" style="width:600px;height:400px;background:yellow"></div>
+<ul class="locations" id= "locs">
+  <% for(var i=0; i<locations.length; i++) {%>
+    <li class="locations">
+      Name: <span><%= locations[i].name %></span><br>
+      Category: <span><%= locations[i].categ %></span><br>
+      Longtitude: <span><%= locations[i].long %></span><br>
+      latitude: <span><%= locations[i].lat %></span><br>
+      <!--<a href='edit/<%= locations[i]._id %>'> Edit
+          <%= locations[i] %>
+      </a>-->
+      <a href='delete/<%= locations[i]._id %>'> Delete
+      </a>
+      <br>
+      <a href='update/<%= locations[i]._id %>'> Update
+      </a>
+    </li>
+  <% } %>
+</ul>
+
+<form action="/insert"  method="post" id="addForm">
+  <fieldset>
+    <legend>Add form:</legend>
+      Name: <input type="text" name="name"><br><br>
+      Category: <input type="text" name="categ"><br><br>
+      Longtitude: <input type="number" name="long"><br><br>
+      Latitude: <input type="number" name="lat"><br><br>
+      <input type="submit" value="Add">
+  </fieldset>
+
+</form> 
+
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(41.017, -91.967),
+    zoom: 12,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCre95jyTQ7uNhkeEtXbrbnnDmiYbR9RUA&callback=myMap"></script>
+
   </body>
+
+
 </html>

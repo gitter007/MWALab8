@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+#locs {
+  float:left;
+  margin-top: 5px;
+}
+
+#addForm {
+  float:right;
+  margin-top: 5px;
+}

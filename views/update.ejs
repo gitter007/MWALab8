@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+<form action="/update"  method="post" id="editForm">
+  <fieldset>
+    <legend>Update form:</legend>
+    <label for="name">Enter name: </label>
+    <input id="name" type="text" name="name" value=<%= name %>>   
+     <br>
+    <label for="categ">Enter category: </label>
+    <input id="categ" type="text" name="categ" value=<%= categ %>>
+    <br>
+    <label for="long">Enter longtitude: </label>
+    <input id="long" type="text" name="long" value=<%= long %>>
+    <br>
+    <label for="lat">Enter latitude: </label>
+    <input id="lat" type="text" name="lat" value=<%= lat %>>
+    <br>   
+   
+    <input id="objectId" type="hidden" name="objectId" value=<%= objectId %>>
+    <br>            
+    <input type="submit" value="Update">
+  </fieldset>
+
+</form> 
+
+
+  </body>
+
+
+</html>
